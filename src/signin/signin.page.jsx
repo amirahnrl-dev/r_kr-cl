@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './signin.page.scss';
 import FormInput from '../utils/form.input';
-import Button from '../utils/button.custom';
+import Button from '../utils/button';
 
 class SignIn extends Component {
     constructor() {
