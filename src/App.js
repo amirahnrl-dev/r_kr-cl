@@ -4,6 +4,7 @@ import './App.css';
 import HomePage from './home/home.page';
 import CollectionsPage from './collections/collections.page';
 import Header from './header/header';
+import SignIn from './signin/signin.page';
 
 class App extends Component { 
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
         
         <Switch>
           <Route path="/shop" component= { CollectionsPage } />
+          <Route path="/signin" component={ SignIn } />
           <Route path="/" component={ HomePage } />
         </Switch>
       </div>
