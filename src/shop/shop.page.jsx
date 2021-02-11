@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import CollectionPreview from '../collection/collection.preview';
-import COLLECTIONS_DATA from './collections.data';
+import SHOP_DATA from './shop.data';
 
-class CollectionsPage extends Component {
+class ShopPage extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            items: COLLECTIONS_DATA
+            items: SHOP_DATA
         }
     }
 
@@ -25,4 +25,4 @@ class CollectionsPage extends Component {
     }
 }
 
-export default CollectionsPage;
+export default ShopPage;
