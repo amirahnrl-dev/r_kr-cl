@@ -5,15 +5,37 @@ import HomePage from './home/home.page';
 import ShopPage from './shop/shop.page';
 import Header from './header/header';
 import SignIn from './signin/signin.page';
+import { auth } from './firebase/api';
 
 class App extends Component { 
+  constructor() {
+    super();
+
+    this.state = {
+      currentUser: null
+    }
+  }
+
+  unsubscribeFromAuth = null;
+
+  componentDidMount() {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
+      this.setState({ currentUser: user });
+      console.log(user);
+    });
+  }
+
+  componentWillUnmount() {
+    this.unsubscribeFromAuth();
+  }
+
   render() {
     return (
       <div>
-        <Header />
+        <Header currentUser={ this.state.currentUser }/>
         
         <Switch>
-          <Route path="/shop" component= { ShopPage } />
+          <Route path="/shop" component={ ShopPage } />
           <Route path="/signin" component={ SignIn } />
           <Route path="/" component={ HomePage } />
         </Switch>
