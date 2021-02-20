@@ -39,7 +39,7 @@ class SignIn extends Component {
                         value={ email }
                         label="email"
                         //onChange={ this.handleChange }
-                        hangleChange={ this.handleChange }
+                        handleChange={ this.handleChange }
                         required
                     />
                     <FormInput 
@@ -48,7 +48,7 @@ class SignIn extends Component {
                         value= { password }
                         label="password"
                         //onChange={ this.handleChange }
-                        hangleChange={ this.handleChange }
+                        handleChange={ this.handleChange }
                         required
                     />
                     <div className="buttons-container">
