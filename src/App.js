@@ -5,6 +5,7 @@ import HomePage from './home/home.page';
 import ShopPage from './shop/shop.page';
 import Header from './header/header';
 import SignIn from './signin/signin.page';
+import SignUp from './signup/signup.page';
 import { auth, createUserDoc as createUser } from './firebase/api';
 
 class App extends Component { 
@@ -57,6 +58,7 @@ class App extends Component {
         <Switch>
           <Route path="/shop" component={ ShopPage } />
           <Route path="/signin" component={ SignIn } />
+          <Route path="/signup" component={ SignUp } />
           <Route path="/" component={ HomePage } />
         </Switch>
       </div>

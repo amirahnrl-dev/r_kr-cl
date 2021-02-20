@@ -11,9 +11,14 @@ const FormInput = ({ handleChange, label, ...otherProps }) => (
 
         {
             label ?
-            <label className={`${ otherProps.value.length ? "animate" : "" } input-label`}>
+            <label 
+                className={`
+                ${ otherProps.value.length ? "animate" : "" 
+                } input-label`}
+            >
                 { label }
-            </label> : null
+            </label> : 
+            null
         }
     </div>
 );

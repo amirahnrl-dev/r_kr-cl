@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { auth } from '../firebase/api';
+import { useLocation } from 'react-router-dom';
 import './header.scss'
 import { ReactComponent as Logo } from '../assets/crown.svg';
 
@@ -18,8 +19,12 @@ const Header = ({ currentUser }) => (
                 currentUser ? 
                 <div className="link" onClick={ () => auth.signOut() }>
                     SIGN OUT
-                </div> :
+                </div> : 
+                <Link className="link" to="/signup">SIGN UP</Link>
+                /*
+                <Link className="link" to="/signup">SIGN UP</Link> :
                 <Link className="link" to="/signin">SIGN IN</Link>
+                */
             }
         </nav>
     </div>
