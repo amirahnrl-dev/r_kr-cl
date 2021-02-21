@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { auth } from '../firebase/api';
+import { auth } from '../utils/firebase';
 import { connect } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import './header.scss'
@@ -15,8 +15,6 @@ const Header = ({ currentUser }) => (
             <Link className="link" to="/shop">SHOP</Link>
             <Link className="link" to="/contact">CONTACT</Link>
             {
-                //<Link className="link" to="/signin">SIGNIN</Link>
-
                 currentUser ? 
                 <div className="link" onClick={ () => auth.signOut() }>
                     SIGN OUT

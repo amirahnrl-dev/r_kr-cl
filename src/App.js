@@ -7,7 +7,7 @@ import ShopPage from './shop/shop.page';
 import Header from './header/header';
 import SignIn from './signin/signin.page';
 import SignUp from './signup/signup.page';
-import { auth, createUserDoc as createUser } from './firebase/api';
+import { auth, createUserDoc as createUser } from './utils/firebase';
 import { setCurrentUser } from './redux/user/user.actions';
 
 class App extends Component { 
