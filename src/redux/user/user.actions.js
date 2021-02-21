@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import * as Constants from '../../utils/constants';
+import * as Type from '../../utils/constants';
 
 export const setCurrentUser = user => ({
-    type: Constants.setCurrentUser,
+    type: Type.UserActionTypes.SET_CURRENT_USER,
     payload: user
 });
