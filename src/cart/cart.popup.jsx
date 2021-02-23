@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import './cart.popup.scss';
 import Button from '../utils/button/button';
 import CartItem from './cart.item';
+import { selectCartItems } from '../utils/redux/cart/cart.selectors'
 
 const CartPopup = ({ cartItems }) => (
     <div className="cart-popup">
@@ -18,8 +19,8 @@ const CartPopup = ({ cartItems }) => (
     </div>
 );
 
-const mapStateToProps = ({ cart: { cartItems } }) => ({
-    cartItems
+const mapStateToProps = (state) => ({
+    cartItems: selectCartItems(state)
 });
 
 export default connect(mapStateToProps)(CartPopup);
