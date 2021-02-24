@@ -5,9 +5,10 @@ import { withRouter } from 'react-router-dom';
 import './cart.popup.scss';
 import Button from '../utils/button/button';
 import CartItem from './cart.item';
-import { selectCartItems } from '../utils/redux/cart/cart.selectors'
+import { selectCartItems } from '../utils/redux/cart/cart.selectors';
+import { toggleHideCartPopup as hidePopup } from '../utils/redux/cart/cart.actions';
 
-const CartPopup = ({ cartItems, history }) => (
+const CartPopup = ({ cartItems, history, dispatch }) => (
     <div className="cart-popup">
         <div className="cart-items">
             {
@@ -21,6 +22,7 @@ const CartPopup = ({ cartItems, history }) => (
         </div>
         <Button onClick={ () => {
                 history.push('/checkout');
+                dispatch(hidePopup());
             } 
         }>
             CHECKOUT

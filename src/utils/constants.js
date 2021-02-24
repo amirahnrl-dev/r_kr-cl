@@ -4,7 +4,8 @@ export const UserActionTypes = {
 
 export const CartActionTypes = {
     TOGGLE_HIDE_CARTPOPUP: "TOGGLE_HIDE_CARTPOPUP",
-    ADD_ITEM: "ADD_ITEM"
+    ADD_ITEM: "ADD_ITEM",
+    CLEAR_ITEM: "CLEAR_ITEM"
 }
 
 /* FUNCTIONS */
