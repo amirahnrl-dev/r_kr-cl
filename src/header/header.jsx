@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom';
 import { auth } from '../utils/firebase';
 import { connect } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import { createStructuredSelector } from 'reselect';
 import './header.scss'
 import { ReactComponent as Logo } from '../assets/crown.svg';
 import CartIcon from '../cart/cart.icon';
 import CartPopup from '../cart/cart.popup';
+import { selectCartHidden } from '../utils/redux/cart/cart.selectors';
+import { selecCurrentUser } from '../utils/redux/user/user.selectors';
 
 const Header = ({ currentUser, hidden }) => {
     const location = useLocation();
@@ -37,12 +40,9 @@ const Header = ({ currentUser, hidden }) => {
 }
 
                         // state -> rootReducer
-const mapStateToProps = ({ 
-    user: { currentUser }, 
-    cart: { hidden }
-}) => ({
-    currentUser,
-    hidden
+const mapStateToProps = createStructuredSelector ({ 
+    currentUser: selecCurrentUser,
+    hidden: selectCartHidden
 });
 
 export default connect(mapStateToProps)(Header);

@@ -5,12 +5,17 @@ import { createSelector } from 'reselect';
 const selectCart = state => state.cart;
 
 // output selector (memoized selector)
-export const selectCartItems = createSelector(
+export const selectCartItems = createSelector (
     [selectCart],
     (cart) => cart.cartItems
 );
 
-export const selectCartItemsCount = createSelector(
+export const selectCartHidden = createSelector (
+    [selectCart],
+    cart => cart.hidden
+);
+
+export const selectCartItemsCount = createSelector (
     [selectCartItems],
     (cartItems) => cartItems.reduce((acc, cartItem) => (
             acc + cartItem.quantity
