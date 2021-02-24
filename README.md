@@ -7,3 +7,5 @@
 ##### `npm install redux redux-logger react-redux`
 
 ##### `npm install reselect`
+
+##### `npm install redux-persist`
