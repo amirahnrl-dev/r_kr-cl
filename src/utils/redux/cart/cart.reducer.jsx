@@ -26,14 +26,12 @@ const cartReducer = (state = INITIAL_STATE, action) => {
                 cartItems: removeItemFromCart(state.cartItems, action.payload)
             });
         case Type.CLEAR_ITEM:
-            return({
+            return {
                 ...state,
-                cartItem: state.cartItems.filter(cartItem => (
-                        // keep item where id is not the one removed
-                        cartItem.id !== action.payload.id
-                    )
+                cartItems: state.cartItems.filter(
+                    cartItem => cartItem.id !== action.payload.id
                 )
-            });
+            };
         default:
             return state;
     }
