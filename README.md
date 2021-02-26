@@ -9,3 +9,5 @@
 ##### `npm install reselect`
 
 ##### `npm install redux-persist`
+
+##### `npm install react-stripe-checkout`
